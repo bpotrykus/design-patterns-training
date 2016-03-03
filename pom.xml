@@ -19,6 +19,7 @@
         <module>Adapter</module>
         <module>Composite</module>
         <module>Visitor</module>
+        <module>Interpreter</module>
     </modules>
 
     <properties>
