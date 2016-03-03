@@ -16,6 +16,9 @@
         <module>AbstractFactory</module>
         <module>Prototype</module>
         <module>Singleton</module>
+        <module>Adapter</module>
+        <module>Composite</module>
+        <module>Visitor</module>
     </modules>
 
     <properties>
