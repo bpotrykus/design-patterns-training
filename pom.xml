@@ -13,6 +13,9 @@
     <modules>
         <module>Builder</module>
         <module>FactoryMethod</module>
+        <module>AbstractFactory</module>
+        <module>Prototype</module>
+        <module>Singleton</module>
     </modules>
 
     <properties>
