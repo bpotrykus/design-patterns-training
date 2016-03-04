@@ -24,6 +24,9 @@
         <module>Proxy</module>
         <module>FlyWeight</module>
         <module>ChainOfResponsibility</module>
+        <module>Command</module>
+        <module>Iterator</module>
+        <module>Mediator</module>
     </modules>
 
     <properties>
