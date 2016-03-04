@@ -20,6 +20,8 @@
         <module>Composite</module>
         <module>Visitor</module>
         <module>Interpreter</module>
+        <module>Decorator</module>
+        <module>Proxy</module>
     </modules>
 
     <properties>

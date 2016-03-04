@@ -20,11 +20,7 @@ public class App {
                         ),
                         new Literal(3)
                 ),
-                new BinaryOperator(
-                        new Literal(8),
-                        new Literal(1),
-                        Action.SUM
-                )
+                new BinaryOperator(new Literal(8), new Literal(1), Action.SUM)
         );
         System.out.println("Result: " + expression.resolve(context));
     }
