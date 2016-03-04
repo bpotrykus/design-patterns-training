@@ -23,6 +23,7 @@
         <module>Decorator</module>
         <module>Proxy</module>
         <module>FlyWeight</module>
+        <module>ChainOfResponsibility</module>
     </modules>
 
     <properties>
