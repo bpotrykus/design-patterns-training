@@ -32,6 +32,7 @@
         <module>Observer</module>
         <module>State</module>
         <module>tdd</module>
+        <module>TicTacToe</module>
     </modules>
 
     <properties>
