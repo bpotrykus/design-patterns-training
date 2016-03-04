@@ -20,9 +20,10 @@ public class App {
                         ),
                         new Literal(3)
                 ),
-                new Sum(
+                new BinaryOperator(
                         new Literal(8),
-                        new Literal(1)
+                        new Literal(1),
+                        Action.SUM
                 )
         );
         System.out.println("Result: " + expression.resolve(context));
