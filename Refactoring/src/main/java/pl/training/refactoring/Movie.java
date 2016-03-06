@@ -2,36 +2,28 @@ package pl.training.refactoring;
 
 public class Movie {
 
-    public static enum Category {REGULAR, NEW_RELEASE, CHILDREN}
-    private static final Category BONUS_CATEGORY = Category.NEW_RELEASE;
+    public static final int CHILDRENS = 2;
+    public static final int REGULAR = 0;
+    public static final int NEW_RELEASE = 1;
+    private String _title;
+    private int _priceCode;
 
-    private String title;
-    private Category category;
-
-    public Movie(String title, Category category) {
-        this.title = title;
-        this.category = category;
+    public Movie(String title, int priceCode) {
+        _title = title;
+        _priceCode = priceCode;
     }
 
-    public Category getCategory() {
-        return category;
+    public int getPriceCode() {
+        return _priceCode;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setPriceCode(int arg) {
+        _priceCode = arg;
     }
 
     public String getTitle() {
-        return title;
+        return _title;
     }
 
-    public boolean isInBonusCategory() {
-        return this.category == BONUS_CATEGORY;
-    }
-
-    @Override
-    public String toString() {
-        return "Movie{" + "title=" + title + " category=" + category + '}';
-    }
-
+    ;
 }
