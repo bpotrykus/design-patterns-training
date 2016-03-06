@@ -33,6 +33,12 @@
         <module>State</module>
         <module>tdd</module>
         <module>TicTacToe</module>
+        <module>Bridge</module>
+        <module>Facade</module>
+        <module>Strategy</module>
+        <module>Refactoring</module>
+        <module>TemplateMethod</module>
+        <module>Spring</module>
     </modules>
 
     <properties>
