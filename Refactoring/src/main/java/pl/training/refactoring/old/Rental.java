@@ -1,4 +1,4 @@
-package pl.training.refactoring;
+package pl.training.refactoring.old;
 
 class Rental {
 
