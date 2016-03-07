@@ -4,6 +4,7 @@ public class Movie {
 
     private String title;
     private int copies;
+    private Gender gender = Gender.REGULAR;
 
     public Movie(String title) {
         this.title = title;
@@ -23,6 +24,14 @@ public class Movie {
 
     public int getCopies() {
         return copies;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public double calculateRent(int daysRent) {
+        return gender.calculateRent(daysRent);
     }
 
 }

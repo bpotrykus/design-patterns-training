@@ -26,6 +26,13 @@ public class MoviesTest {
     }
 
     @Test
+    public void movieRemoveShouldDecreaseAvailableMovieCopies() {
+        int expectedNumberOfCopies = movies.getNumberOfCopies(title) - 1;
+        movies.remove(title);
+        assertTrue(movies.getNumberOfCopies(title) == expectedNumberOfCopies);
+    }
+
+    @Test
     public void movieAddShouldIncreaseAvailableMovieCopies() {
         int expectedNumberOfCopies = movies.getNumberOfCopies(title) + 1;
         movies.add(title);
