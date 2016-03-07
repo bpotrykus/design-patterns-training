@@ -3,7 +3,7 @@ package pl.training.refactoring;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class MoviesTest {
 
@@ -16,27 +16,8 @@ public class MoviesTest {
     }
 
     @Test
-    public void movieShouldBeAvailableAfterAdding() {
-        assertTrue(movies.isAvailable(title));
-    }
-
-    @Test
-    public void movieShouldNotBeAvailableWhenThereIsNoCopyLeft() {
-        assertFalse(movies.isAvailable("Terminator"));
-    }
-
-    @Test
-    public void movieRemoveShouldDecreaseAvailableMovieCopies() {
-        int expectedNumberOfCopies = movies.getNumberOfCopies(title) - 1;
-        movies.remove(title);
-        assertTrue(movies.getNumberOfCopies(title) == expectedNumberOfCopies);
-    }
-
-    @Test
-    public void movieAddShouldIncreaseAvailableMovieCopies() {
-        int expectedNumberOfCopies = movies.getNumberOfCopies(title) + 1;
-        movies.add(title);
-        assertTrue(movies.getNumberOfCopies(title) == expectedNumberOfCopies);
+    public void movieShouldBeRentedIfAvailable() {
+        assertTrue(movies.rent(title));
     }
 
 }

@@ -13,19 +13,23 @@ public class Movies {
         moviesRepository.put(movie.getTitle(), movie);
     }
 
-    public Movie get(String title) {
+    public boolean rent(String title) {
+        if (!isAvailable(title)) {
+            return false;
+        }
+        get(title).removeCopy();
+        return true;
+    }
+
+    private Movie get(String title) {
         return moviesRepository.getOrDefault(title, new Movie(title));
     }
 
-    public void remove(String title) {
-        get(title).removeCopy();
-    }
-
-    public boolean isAvailable(String title) {
+    private boolean isAvailable(String title) {
         return getNumberOfCopies(title) > 0;
     }
 
-    public int getNumberOfCopies(String title) {
+    private int getNumberOfCopies(String title) {
         return get(title).getCopies();
     }
 
