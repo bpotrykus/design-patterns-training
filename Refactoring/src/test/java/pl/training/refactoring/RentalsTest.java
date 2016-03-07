@@ -11,12 +11,13 @@ public class RentalsTest {
 
     @Mock
     private Movies movies;
-    private Rentals rentals = new Rentals(movies);
+    private Rentals rentals;
     private String title = "W pustyni i w puszczy";
 
     @Before
     public void init() {
         MockitoAnnotations.initMocks(this);
+        rentals = new Rentals(movies);
     }
 
     @Test
