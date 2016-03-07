@@ -8,7 +8,6 @@ import static org.junit.Assert.*;
 public class MoviesTest {
 
     private Movies movies = new Movies();
-    private  Rentals rentals = new Rentals(movies);
     private String title = "W pustyni i w puszczy";
 
     @Before
@@ -22,15 +21,8 @@ public class MoviesTest {
     }
 
     @Test
-    public void movieShouldNotBeAvailableWhenIsNoCopyLeft() {
+    public void movieShouldNotBeAvailableWhenThereIsNoCopyLeft() {
         assertFalse(movies.isAvailable("Terminator"));
-    }
-
-    @Test
-    public void movieRentalShouldDecreaseAvailableMovieCopies() {
-        int expectedNumberOfCopies = movies.getNumberOfCopies(title) - 1;
-        rentals.rent(title);
-        assertTrue(movies.getNumberOfCopies(title) == expectedNumberOfCopies);
     }
 
     @Test
