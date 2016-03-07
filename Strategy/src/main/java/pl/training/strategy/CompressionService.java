@@ -6,6 +6,7 @@ import java.util.List;
 public class CompressionService {
 
     private CompressionStrategy strategy;
+
     public void setCompressionStrategy(CompressionStrategy strategy) {
         this.strategy = strategy;
     }

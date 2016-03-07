@@ -14,6 +14,7 @@ public class App {
 
         CompressionService compressionService = new CompressionService();
         compressionService.setCompressionStrategy(new ZipCompressionStrategy());
+        //----------------------------------------------------------------------
         compressionService.createArchive(files);
     }
 

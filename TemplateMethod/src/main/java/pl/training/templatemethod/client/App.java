@@ -7,6 +7,7 @@ public class App {
 
     public static void main(String[] args) {
         Compiler compiler = new DesktopCompiler();
+        //-----------------------------------------
         compiler.compile();
     }
 
