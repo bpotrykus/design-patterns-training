@@ -4,23 +4,23 @@ public enum Gender {
 
     REGULAR(2, 2, 1.5), NEW_RELEASE(0, 0, 3), CHILDREN(3, 1.5, 1.5);
 
-    int minDaysRent;
-    double initialCost;
-    double costPerDay;
+    private int freeRentalPeriod;
+    private double initialCost;
+    private double costPerDay;
 
-    Gender(int minDaysRent, double initialCost, double costPerDay) {
-        this.minDaysRent = minDaysRent;
+    Gender(int freeRentalPeriod, double initialCost, double costPerDay) {
+        this.freeRentalPeriod = freeRentalPeriod;
         this.initialCost = initialCost;
         this.costPerDay = costPerDay;
     }
 
-    public double calculateRent(int rentDays) {
-        double totalCost = initialCost;
-        int days = rentDays - minDaysRent;
-        if (days > 0) {
-            totalCost += days * costPerDay;
-        }
-        return totalCost;
+    public double getRentCosts(int rentDays) {
+        double rentCosts = getPaidDays(rentDays) * costPerDay;
+        return initialCost + rentCosts;
+    }
+
+    private int getPaidDays(int rentDays) {
+        return rentDays - freeRentalPeriod;
     }
 
 }

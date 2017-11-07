@@ -10,10 +10,6 @@ public class Movie {
         this.title = title;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
     public void addCopy() {
         copies++;
     }
@@ -22,16 +18,24 @@ public class Movie {
         copies--;
     }
 
-    public int getCopies() {
-        return copies;
-    }
-
     public void setGender(Gender gender) {
         this.gender = gender;
     }
 
-    public double calculateRent(int daysRent) {
-        return gender.calculateRent(daysRent);
+    public double getRentCosts(int daysRent) {
+        return gender.getRentCosts(daysRent);
+    }
+
+    private boolean isAvailable() {
+        return copies > 0;
+    }
+
+    public boolean rent() {
+        if (isAvailable()) {
+            removeCopy();
+            return true;
+        }
+        return false;
     }
 
 }

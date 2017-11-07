@@ -12,11 +12,11 @@ public class MoviesTest {
 
     @Before
     public void init() {
-        movies.add(title);
+        movies.addCopy(title);
     }
 
     @Test
-    public void movieShouldBeRentedIfAvailable() {
+    public void shouldRentedAvailableMovie() {
         assertTrue(movies.rent(title));
     }
 

@@ -12,7 +12,7 @@ public class MovieTest {
     public void shouldCalculateRegularMovieCost() {
         int daysRented = 6;
         int expectedResult = 8;
-        assertTrue(movie.calculateRent(daysRented) == expectedResult);
+        assertTrue(movie.getRentCosts(daysRented) == expectedResult);
     }
 
     @Test
@@ -20,7 +20,7 @@ public class MovieTest {
         int daysRented = 6;
         int expectedResult = 18;
         movie.setGender(Gender.NEW_RELEASE);
-        assertTrue(movie.calculateRent(daysRented) == expectedResult);
+        assertTrue(movie.getRentCosts(daysRented) == expectedResult);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class MovieTest {
         int daysRented = 6;
         int expectedResult = 6;
         movie.setGender(Gender.CHILDREN);
-        assertTrue(movie.calculateRent(daysRented) == expectedResult);
+        assertTrue(movie.getRentCosts(daysRented) == expectedResult);
     }
 
 }
