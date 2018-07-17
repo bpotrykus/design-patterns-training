@@ -1,1 +1,58 @@
 Wzorzec Strategia
+Definiuje algorytmy, hermetyzuje je i umożliwia ich wymienne stosowanie.
+Klasy algorytmów implementują jeden interfejs.
+Klient wykorzystuje delegację do jednego z algorytmów, którego referencję
+przechowuje w zmiennej abstrakcyjnej.
+Rozszerzeniem jest możliwość przechowywania kolekcji algorytmów i
+przekazywanie do nich danych, które umożliwią im decyzję,
+który z nich powinien zostać uruchomiony.
+Jest to szczególnie przydatne w przypadku DI,
+ale oczywiście łamie w pewien sposób SINGLE RESPONSIBILITY PRINCIPLE.
+
+Wykorzystywane reguły projektowania obiektowego
+a. Poddawaj hermetyzacji to co się zmienia
+b. Przekładaj kompozycję/delegację nad dziedziczenie
+c. Skup się na tworzeniu abstrakcji a nie implementacji
+
+
+Kroki postępowania
+1. Definiujemy abstrakcję wiazaca wszystkie klasy alogrytmów.
+Np. CompressionStrategy
+
+public interface AbstractStrategy {
+    void doSomething();
+    void doSomethingElse();
+}
+
+2. Hermetyzujemy implementacje algorytmów w poszczegolnych klasach
+Np. RarCompressionStrategy
+
+public class SpecificNameStrategy implements AbstractStrategy {
+
+    public void doSomething(){
+    //implementation
+    }
+    public void doSomethingElse(){
+    //implementation
+    }
+}
+
+
+3. Tworzymy klienta, który
+a. posiada referencje do abstrakcji algorytmu
+b. ma mozliwosc zmiany tej referencji w trakcie dzialania programu
+c. wykorzystuje dana strategie
+Np. CompressionService
+
+
+public class Client {
+    AbstractStrategy abstractStrategy;
+    setStrategy(AbstractStrategy abstractStrategy){
+    // setting strategy
+    }
+    doSomethingUsingStrategy(){
+    // do something using strategy
+    }
+}
+
+Kroki postepowania dla DI
